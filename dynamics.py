@@ -9,7 +9,7 @@ pulse_boundary = -5000.0e-9 + 10e-9 # float in nm
 # pulse moves in the positive y direction
 pulse_direction = [0, 1, 0]
 pulse_amplitude = SI(1e5, 'A/m')
-pulse_duration = 1*ps
+pulse_duration = 50*ps
 
 # Function which sets the magnetisation to zero
 # Gets the simulation object, sim, as an argument and uses it with method set_H_ext to set the 
@@ -34,7 +34,7 @@ def switch_on_pulse(sim):
 #   save=[...] is used to save the data.
 
 # simulate_film function which was defined in thesystem.py sets up the system and materials
-s = simulate_film('dynamics', 0.005)
+s = simulate_film('dynamics', 0.05)
 
 # Sets the initial magnetization configuration from the file saved in part 1
 s.load_m_from_h5file(m0_filename)
